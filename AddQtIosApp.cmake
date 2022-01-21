@@ -68,7 +68,7 @@ include(CMakeParseArguments)
 #    DISTRIBUTION_METHOD "app-store"
 #    VERBOSE
 # )
-function(add_qt_ios_app TARGET)
+macro(add_qt_ios_app TARGET)
 
     set(QT_IOS_OPTIONS VERBOSE
         ORIENTATION_PORTRAIT
@@ -606,4 +606,4 @@ function(add_qt_ios_app TARGET)
 
     endif()
 
-endfunction()
+endmacro()
