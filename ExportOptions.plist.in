@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>generateAppStoreInformation</key>
+    <true/>
     <key>method</key>
     <string>${QT_IOS_DISTRIBUTION_METHOD}</string>
     ${QT_IOS_PROVISIONING_PROFILES_KEY}
