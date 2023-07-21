@@ -7,11 +7,11 @@
 cmake_minimum_required(VERSION 3.0.0 FATAL_ERROR)
 
 # find the Qt root directoryn might break in future release
-# Dependant on Qt5
-if(NOT Qt5Core_DIR)
-    find_package(Qt5Core REQUIRED)
+# Dependant on Qt6
+if(NOT Qt6Core_DIR)
+    find_package(Qt6Core REQUIRED)
 endif()
-get_filename_component(QT_IOS_QT_ROOT "${Qt5Core_DIR}/../../.." ABSOLUTE)
+get_filename_component(QT_IOS_QT_ROOT "${Qt6Core_DIR}/../../.." ABSOLUTE)
 
 if(QT_IOS_QT_ROOT)
     message(STATUS "Found Qt Sdk for Ios: ${QT_IOS_QT_ROOT}")
@@ -319,8 +319,8 @@ function(add_qt_ios_app TARGET)
         string(REGEX MATCH ".*${_DEBUG_SUFFIX}${CMAKE_STATIC_LIBRARY_SUFFIX}$" _IS_DEBUG_LIB ${_QT_LIB})
         string(REGEX MATCH ".*_iphonesimulator${_DEBUG_SUFFIX}${CMAKE_STATIC_LIBRARY_SUFFIX}$" _IS_DEBUG_SIM_LIB ${_QT_LIB})
         string(REGEX MATCH ".*_iphonesimulator${CMAKE_STATIC_LIBRARY_SUFFIX}$" _IS_SIM_LIB ${_QT_LIB})
-        string(REGEX MATCH ".*Qt5Bootstrap.*" _IS_BOOTSTRAP ${_QT_LIB})
-        string(REGEX MATCH ".*Qt5QmlDevTools.*" _IS_DEVTOOLS ${_QT_LIB})
+        string(REGEX MATCH ".*Qt6Bootstrap.*" _IS_BOOTSTRAP ${_QT_LIB})
+        string(REGEX MATCH ".*Qt6QmlDevTools.*" _IS_DEVTOOLS ${_QT_LIB})
 
         if(NOT _IS_BOOTSTRAP AND NOT _IS_DEVTOOLS AND NOT _IS_DEBUG_SIM_LIB AND NOT _IS_SIM_LIB)
             if(_IS_DEBUG_LIB OR NOT _DEBUG_SUFFIX)
