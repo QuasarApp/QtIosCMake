@@ -32,7 +32,7 @@ The application also demonstrate full CI pipeline with Github Actions.
 
 ### How to integrate it to your CMake configuration
 
-All you have to do is to call the ```add_qt_ios_app``` macro. No additionnal target will be generated, only the main target property are going to change. Of course this is not enough and you'll need to add extract arguments.
+All you have to do is to call the ```add_qt_ios_app``` macro. No additional target will be generated, only the main target property are going to change. Of course this is not enough and you'll need to add extract arguments.
 
 ```cmake
 if(${CMAKE_SYSTEM_NAME} STREQUAL "iOS")
@@ -69,10 +69,10 @@ cmake -DCMAKE_PREFIX_PATH=$QT_IOS_DIR \
 -DPLATFORM=OS64COMBINED \
 -DENABLE_BITCODE=FALSE \
 -G "Xcode" \
-path/to/Projet/
+path/to/Project/
 ```
 
-To sign your app you need at least a team id and a signing identity. I recommand you to override those variable when doing the cmake command, and not writting them inside your cmake scripts. This will give you more control when configuring the project.
+To sign your app you need at least a team id and a signing identity. I recommend you to override those variable when doing the cmake command, and not writing them inside your cmake scripts. This will give you more control when configuring the project.
 
 * `QT_IOS_TEAM_ID`: Same as `TEAM_ID` option, can be useful to specify at configure time, not in source code.
 * `QT_IOS_CODE_SIGN_IDENTITY`: Same as `CODE_SIGN_IDENTITY` option, can be useful to specify at configure time, not in source code.
@@ -210,7 +210,7 @@ add_qt_ios_app(MyApp
 
 **LONG_VERSION**
 
-The release version of the application that usualy include the build number. This is default to **VERSION**.
+The release version of the application that usually include the build number. This is default to **VERSION**.
 
 *Example:*
 
@@ -267,7 +267,7 @@ It is possible to specify a custom pList file. The default is `MacOSXBundleInfo.
 **MainStoryboard**
 
 ```xml
-<!-- Optionnal StoryBoard filename -->
+<!-- Optional StoryBoard filename -->
 <key>UIMainStoryboardFile</key>
 <string>${MACOSX_BUNDLE_MAIN_STORYBOARD}</string>
 ```
@@ -374,7 +374,7 @@ Specify the file to use as LaunchScreen Storyboard. This file will be bundle int
 
 **MAIN_STORYBOARD**
 
-*This file seems to be optionnal is you use only Qt/Qml.*
+*This file seems to be optional is you use only Qt/Qml.*
 
 Set the Main Storyboard of your app. The file will also be bundled.
 
@@ -421,7 +421,7 @@ When the two flags are specified deployment will result in Universal. This is al
 
 **REQUIRES_FULL_SCREEN**
 
-This flag disable the multitask feature. By doing so `LaunchScreen.storyboard` become optionnal.
+This flag disable the multitask feature. By doing so `LaunchScreen.storyboard` become optional.
 
 ![ScRequiresFullScreen](doc/ScRequiresFullScreen.png)
 
@@ -439,7 +439,7 @@ If specified, two additional target are going to be generated.
 
 Ipa file is the format required by App Store Connect. It can be uploaded straight to TestFlight.
 
-When specifying `IPA`, additionnal parameters are available:
+When specifying `IPA`, additional parameters are available:
 
 - `UPLOAD_SYMBOL` : Pack symbols inside the ipa. Useful when having a crash report.
 - `DISTRIBUTION_METHOD` : Only `app-store` is supported for know.
@@ -456,7 +456,7 @@ This is required by Apple Connect. If this key doesn't exist in your Info.plist,
 
 **VERBOSE**
 
-Print all debug information. Usefull to check if configuration is ok.
+Print all debug information. Useful to check if configuration is ok.
 
 ## Notes
 
